@@ -3,7 +3,7 @@
     <!-- This is a fork of org.topbraid/mauiserver -->
     <groupId>fi.nationallibrary</groupId>
     <artifactId>mauiserver</artifactId>
-    <version>1.3.1</version>
+    <version>1.3.2-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Maui Server</name>
     <description>An HTTP wrapper around the Maui Topic Indexer</description>
@@ -24,7 +24,7 @@
         <url>https://github.com/NatLibFi/MauiServer</url>
         <connection>scm:git:git://github.com/NatLibFi/MauiServer.git</connection>
         <developerConnection>scm:git:git@github.com:NatLibFi/MauiServer.git</developerConnection>
-        <tag>mauiserver-1.3.1</tag>
+        <tag>HEAD</tag>
     </scm>
     
    	<developers>

@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- This is a fork of org.topbraid/mauiserver -->
     <groupId>fi.nationallibrary</groupId>
     <artifactId>mauiserver</artifactId>
-    <version>1.3.1-SNAPSHOT</version>
+    <version>1.3.1</version>
     <packaging>war</packaging>
     <name>Maui Server</name>
     <description>An HTTP wrapper around the Maui Topic Indexer</description>
@@ -25,7 +24,7 @@
         <url>https://github.com/NatLibFi/MauiServer</url>
         <connection>scm:git:git://github.com/NatLibFi/MauiServer.git</connection>
         <developerConnection>scm:git:git@github.com:NatLibFi/MauiServer.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>mauiserver-1.3.1</tag>
     </scm>
     
 
@@ -151,7 +150,7 @@
         								</goals>
         							</pluginExecutionFilter>
         							<action>
-        								<ignore></ignore>
+        								<ignore />
         							</action>
         						</pluginExecution>
         					</pluginExecutions>

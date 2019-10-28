@@ -28,6 +28,20 @@
         <tag>HEAD</tag>
     </scm>
     
+   	<developers>
+		<developer>
+			<email>sampo.savolainen@spatineoDOTcom</email>
+			<id>sampov2</id>
+			<name>Sampo Savolainen</name>
+			<organization>Spatineo Inc</organization>
+		</developer>
+		<developer>
+			<email>osma.suominen@helsinkiDOTfi</email>
+			<id>osma</id>
+			<name>Osma Suominen</name>
+			<organization>National Library of Finland</organization>
+		</developer>
+	</developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

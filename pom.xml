@@ -1,16 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.topbraid</groupId>
+    <!-- This is a fork of org.topbraid/mauiserver -->
+    <groupId>fi.nationallibrary</groupId>
     <artifactId>mauiserver</artifactId>
     <version>1.3.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Maui Server</name>
     <description>An HTTP wrapper around the Maui Topic Indexer</description>
-    <url>https://github.com/TopQuadrant/MauiServer</url>
+    <url>https://github.com/NatLibFi/MauiServer</url>
     <inceptionYear>2015</inceptionYear>
     <issueManagement>
-        <url>https://github.com/TopQuadrant/MauiServer/issues</url>
+        <url>https://github.com/NatLibFi/MauiServer/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
     <licenses>
@@ -21,10 +22,12 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/TopQuadrant/MauiServer</url>
-        <connection>scm:git:git://github.com/TopQuadrant/MauiServer.git</connection>
-        <developerConnection>scm:git:git@github.com:TopQuadrant/MauiServer.git</developerConnection>
+        <url>https://github.com/NatLibFi/MauiServer</url>
+        <connection>scm:git:git://github.com/NatLibFi/MauiServer.git</connection>
+        <developerConnection>scm:git:git@github.com:NatLibFi/MauiServer.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
+    
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

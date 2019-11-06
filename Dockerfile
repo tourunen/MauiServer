@@ -1,23 +1,25 @@
-FROM tomcat:8-jdk11-slim
+FROM maven:slim as builder
 
 LABEL maintainer="Juho Inkinen <juho.inkinen@helsinki.fi>"
 
+
+COPY src/ src/
+COPY pom.xml .
+RUN mvn package
+
+
+FROM tomcat:8-jdk11-slim
+
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
-		wget \
 		libvoikko1 \
 		voikko-fi \
 		gosu \
-	## Clean up:
 	&& rm -rf /var/lib/apt/lists/* /usr/include/*
 
+COPY --from=builder /target/mauiserver-*-SNAPSHOT.war /usr/local/tomcat/webapps/mauiserver.war
 
-# TODO Switch to Maven Central when available there, or build in own stage:
-RUN wget https://oss.sonatype.org/service/local/repositories/releases/content/fi/nationallibrary/mauiserver/1.3.2/mauiserver-1.3.2.war \
-	-O /usr/local/tomcat/webapps/mauiserver.war -q
-
-
-ADD docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

@@ -22,5 +22,8 @@ COPY --from=builder /target/mauiserver-*-SNAPSHOT.war /usr/local/tomcat/webapps/
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
+VOLUME /mauidata
+ENV MAUI_SERVER_DATA_DIR=/mauidata
+
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["catalina.sh", "run"]

@@ -3,9 +3,10 @@
 # running Tomcat as nonroot.
 # See https://denibertovic.com/posts/handling-permissions-with-docker-volumes/
 
-MY_UID=${MY_UID:-9001}
+MY_UID=${MY_UID:-0}
+MY_GID=${MY_GID:-0}
 
-echo "Starting with UID: $MY_UID"
+echo "Starting with UID $MY_UID and GID $MY_GID"
 groupadd -r $MY_UID -g $MY_GID
 useradd --shell /bin/bash -u $MY_UID -g $MY_GID -o -c "" -m tomcat_user
 

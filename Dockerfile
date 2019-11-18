@@ -19,7 +19,7 @@ RUN apt-get update \
 
 COPY --from=builder /target/mauiserver-*-SNAPSHOT.war /usr/local/tomcat/webapps/mauiserver.war
 
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY scripts/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 VOLUME /mauidata

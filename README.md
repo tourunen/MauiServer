@@ -51,6 +51,26 @@ The project uses Maven for building.
 
 The API root is at `/`. A small demo app is at `/app/` (requires tagger creation and training through the API).
 
+## Usage with Docker
+
+- Pull Maui Server image from repository:
+
+    `docker pull quay.io/natlibfi/mauiserver`
+
+- Alternatively, build the image locally:
+
+    `docker build -t quay.io/natlibfi/mauiserver .`
+
+- Run as the host user and mount `mauidata` directory located on host:
+
+     `docker run -e MY_UID=$(id -u) -e MY_GID=$(id -g) -v ~/mauidata:/mauidata --name mauiserver --rm --network="host" quay.io/natlibfi/mauiserver`
+
+- Alternatively, run as root and use a named volume for `mauidata` directory:
+
+    `docker run -v mauidata-volume:/mauidata --name mauiserver --rm --network="host" quay.io/natlibfi/mauiserver`
+
+The Maui Server can then be accessed from host system in http://localhost:8080/mauiserver/. In case of connection problems, try replacing `--network="host"` option with `-p 8080:8080`.
+
 ## License
 
 This project is licensed under the terms of the [GNU GPL v3](http://www.gnu.org/licenses/gpl.html).

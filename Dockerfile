@@ -12,8 +12,8 @@ FROM tomcat:8.5.53-jdk11-openjdk-slim
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
-		libvoikko1 \
-		voikko-fi \
+		libvoikko1=4.2-1 \
+		voikko-fi=2.2-1.1 \
 		gosu \
 	&& rm -rf /var/lib/apt/lists/* /usr/include/*
 

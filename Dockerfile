@@ -22,6 +22,9 @@ COPY --from=builder /target/mauiserver-*-SNAPSHOT.war /usr/local/tomcat/webapps/
 COPY scripts/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
+RUN mkdir /mauidata
+RUN chmod -R g+rwX /usr/local/tomcat /mauidata
+
 VOLUME /mauidata
 ENV MAUI_SERVER_DATA_DIR=/mauidata
 
